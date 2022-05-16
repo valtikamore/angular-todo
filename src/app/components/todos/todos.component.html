@@ -1,0 +1,22 @@
+<p>search todo</p>
+<input
+  type="text"
+  [(ngModel)]="searchString"
+>
+<div *ngIf="!loading">
+  <ul class="wrapper" *ngIf="todoService.todos.length; else noTodos">
+    <li *ngFor="let todo of todoService.todos | todosFilter:searchString; let i = index" class="content">
+      <label class="item" [class.done]="todo.completed">
+        <input type="checkbox" [checked]="todo.completed" (change)="onChange(todo.id)">
+        <p>{{i + 1}} {{todo.title}}</p>
+        <p>{{todo.date | date}}</p>
+      </label>
+      <div class="removeItem" (click)="onRemove(todo.id)">&timesd;</div>
+    </li>
+  </ul>
+  <ng-template #noTodos>
+    <p>todos are empty</p>
+  </ng-template>
+</div>
+
+<p *ngIf="loading">Loading....</p>

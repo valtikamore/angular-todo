@@ -2,13 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {FormsModule} from "@angular/forms";
+import {TodosComponent} from "./components/todos/todos.component";
+import { HttpClientModule} from "@angular/common/http";
+import { TodoformComponent } from './components/todoform/todoform.component';
+import {TodosFilterPipe} from "./shared/todos-filter.pipe";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent,
+    TodoformComponent,
+    TodoformComponent,
+    TodosFilterPipe,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

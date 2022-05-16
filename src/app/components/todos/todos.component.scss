@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid black;
+    margin-bottom: 12px;
+    input,p {
+      margin-right: 10px;
+    }
+  }
+  .item {
+    display: flex;
+    align-items: center;
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .removeItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+  }
+}
+.done {
+  text-decoration: line-through;
+}
